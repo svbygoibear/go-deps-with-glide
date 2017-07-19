@@ -38,10 +38,10 @@ There is also a `glide.lock` file which ensures that a project is always using t
 ## Setting Up
 
 ### Get Go-ing
-To use this sample, you will need [Go](https://golang.org) installed on your computer. **The steps documented in this project works with version 1.5.0 and up of Go.**
+To use this sample, you will need [Go](https://golang.org) installed on your computer. **The steps documented in this project works with version 1.5.0 and up of Go as we make use of `vendoring`.**
 Follow the instructions from the [official page](https://golang.org/doc/install). 
 
-After you've completed the installation and ran a quick test, check your go version from command line:
+After you've completed the installation and ran a quick test, check your go version from terminal:
 ```
 $ go version
 ```
@@ -50,9 +50,39 @@ You'll see something like this printed out:
 go version go1.8.3 darwin/amd64
 ```
 ### Workspace Structure
-
+When getting started with Go, you'll notice that your workspace needs to have a specific structure - just to highlight this again, it is a good idea to keep up this pattern;
+```
+$HOME
+    |_ go
+        |_ bin
+        |_ pkg
+        |_ src
+            |_ go-deps-with-glide
+```
 
 ### Glide-ing Dependencies
+#### Getting Glide
+To install [Glide](https://github.com/Masterminds/glide) on Mac or Linux, you can use the following in terminal;
+```
+$ curl https://glide.sh/get | sh
+```
+
+If you have [Homebrew](https://brew.sh) installed on Mac OS X, you can also use that;
+```
+$ brew install glide
+```
+
+You can also download a versioned release by going here: https://github.com/Masterminds/glide/releases
+
+And lastly if you've installed `Go`, you can use that to install Glide via terminal;
+```
+$ go get -u github.com/Masterminds/glide
+```
+This gets the latest snapshot and is not a release version.
+
+For more information on installation, check out the steps [on their GitHub repo](https://github.com/Masterminds/glide#install).
+
+#### Using Glide
 
 ### IDE Specific Settings
 #### IntelliJ Idea
@@ -64,3 +94,4 @@ go version go1.8.3 darwin/amd64
 - [Glide GitHub](https://github.com/Masterminds/glide)
 - [Creating a Makefile for your Go project](https://vincent.bernat.im/en/blog/2017-makefile-build-golang)
 - [Glide Caching](https://github.com/Masterminds/glide/issues/178)
+- [Vendoring in Go](https://goenning.net/2017/02/23/packages-vendoring-in-go/)
