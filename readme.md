@@ -101,14 +101,38 @@ $HOME/go/src/go-deps-with-glide export GOPATH=$HOME/git/go/
 ```
 
 #### Updating Dependencies
+When using `update` opposed to `install` it is very important to take note that running an update would actually fetch the latest versions of your dependencies/specified dependency and update your `glide.yaml` and `glide.lock` files.
+I would suggest only using `update` on a specific dependency at a time if you're working on a current project as this could lead to potential breaking changes.
+
+To update your dependencies, you simply run:
+```
+$HOME/go/src/go-deps-with-glide glide update
+```
+Or for short:
+```
+$HOME/go/src/go-deps-with-glide glide up
+```
+
+For more information on Glide's update feature check out the [Glide documentation](https://github.com/Masterminds/glide#glide-update-aliased-to-up)
 
 ### IDE Specific Settings
 #### IntelliJ Idea
 
 ## Using Project
-One of the upsides of using `Glide` is that you're able to use it with `Go`, thus to build your project you can just run `go build` as you normally would in terminal:
+After cloning this repository, you'll need to make sure that:
+- You have the correct version of Go installed.
+- You have your workspace set up.
+- You have Glide installed.
+- You've installed all your dependencies using Glide.
+
+The next step is to see if your project builds. One of the upsides of using `Glide` is that you're able to use it with `Go`, thus to build your project you can just run `go build` as you normally would in terminal:
 ```
 $HOME/go/src/go-deps-with-glide go build
+```
+
+You can also run your Go project as you normally would:
+```
+$HOME/go/src/go-deps-with-glide go run main.go
 ```
 
 ## Further Reading
