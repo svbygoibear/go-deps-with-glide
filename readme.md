@@ -34,6 +34,7 @@ import:
 ```
 
 There is also a `glide.lock` file which ensures that a project is always using the same version for each dependency specified whenever you execute `glide install` on that project.
+The big advantage of this is that it allows you to commit your project **without** the vendor folder and its contents as the specific versions can be found again using Glide to install the dependencies as specified in the `glide.yaml` and `glide.lock` files.
 
 ## Setting Up
 
@@ -72,7 +73,7 @@ If you have [Homebrew](https://brew.sh) installed on Mac OS X, you can also use 
 $ brew install glide
 ```
 
-You can also download a versioned release by going here: https://github.com/Masterminds/glide/releases
+You can also download a versioned release by [checking out the release page](https://github.com/Masterminds/glide/releases).
 
 And lastly if you've installed `Go`, you can use that to install Glide via terminal;
 ```
@@ -94,6 +95,7 @@ For this project, you'll have to install all the dependencies that's been listed
 ```
 $HOME/go/src/go-deps-with-glide glide install 
 ```
+You'll notice that this creates a `vendor` folder inside of your project which contains all the dependencies that you'll be using.
 
 If you get a `[ERROR]	$GOPATH is not set.` message, it could be that you need to set your go path in your terminal session before installing:
 ```
@@ -113,10 +115,11 @@ Or for short:
 $HOME/go/src/go-deps-with-glide glide up
 ```
 
-For more information on Glide's update feature check out the [Glide documentation](https://github.com/Masterminds/glide#glide-update-aliased-to-up)
+For more information on Glide's update feature check out the [Glide documentation](https://github.com/Masterminds/glide#glide-update-aliased-to-up).
 
 ### IDE Specific Settings
 #### IntelliJ Idea
+All explanations up until this point has been done with terminal in mind. It is possible to set up this project in Intellij as well (if it does not work out of the box).
 
 ## Using Project
 After cloning this repository, you'll need to make sure that:
@@ -141,3 +144,4 @@ $HOME/go/src/go-deps-with-glide go run main.go
 - [Creating a Makefile for your Go project](https://vincent.bernat.im/en/blog/2017-makefile-build-golang)
 - [Glide Caching](https://github.com/Masterminds/glide/issues/178)
 - [Vendoring in Go](https://goenning.net/2017/02/23/packages-vendoring-in-go/)
+- [Glide yaml](https://github.com/Masterminds/glide#glideyaml)
