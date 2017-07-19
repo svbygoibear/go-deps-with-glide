@@ -50,7 +50,7 @@ You'll see something like this printed out:
 go version go1.8.3 darwin/amd64
 ```
 ### Workspace Structure
-When getting started with Go, you'll notice that your workspace needs to have a specific structure - just to highlight this again, it is a good idea to keep up this pattern;
+When getting started with Go, you'll notice that your workspace needs to have a specific structure - just to highlight this again, it is a good idea to keep up this pattern:
 ```
 $HOME
     |_ go
@@ -62,12 +62,12 @@ $HOME
 
 ### Glide-ing Dependencies
 #### Getting Glide
-To install [Glide](https://github.com/Masterminds/glide) on Mac or Linux, you can use the following in terminal;
+To install [Glide](https://github.com/Masterminds/glide) on Mac or Linux, you can use the following in terminal:
 ```
 $ curl https://glide.sh/get | sh
 ```
 
-If you have [Homebrew](https://brew.sh) installed on Mac OS X, you can also use that;
+If you have [Homebrew](https://brew.sh) installed on Mac OS X, you can also use that:
 ```
 $ brew install glide
 ```
@@ -83,11 +83,33 @@ This gets the latest snapshot and is not a release version.
 For more information on installation, check out the steps [on their GitHub repo](https://github.com/Masterminds/glide#install).
 
 #### Using Glide
+To read more about this, you can also reference the [Glide Documentation](https://github.com/Masterminds/glide#usage).
+
+If you're starting up a new project (this step should be excluded from this sample project) you start with creating a new Glide workspace with the following command in terminal:
+```
+$HOME/go/src/go-deps-with-glide glide create # You can also use glide init
+```
+
+For this project, you'll have to install all the dependencies that's been listed in the `glide.yaml` and `glide.lock` files:
+```
+$HOME/go/src/go-deps-with-glide glide install 
+```
+
+If you get a `[ERROR]	$GOPATH is not set.` message, it could be that you need to set your go path in your terminal session before installing:
+```
+$HOME/go/src/go-deps-with-glide export GOPATH=$HOME/git/go/
+```
+
+#### Updating Dependencies
 
 ### IDE Specific Settings
 #### IntelliJ Idea
 
 ## Using Project
+One of the upsides of using `Glide` is that you're able to use it with `Go`, thus to build your project you can just run `go build` as you normally would in terminal:
+```
+$HOME/go/src/go-deps-with-glide go build
+```
 
 ## Further Reading
 - [Glide](https://glide.sh)
