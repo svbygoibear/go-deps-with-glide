@@ -60,6 +60,7 @@ $HOME
         |_ src
             |_ go-deps-with-glide
 ```
+For more on workspaces, you can look at the [golang guide](https://golang.org/doc/code.html#Workspaces).
 
 ### Glide-ing Dependencies
 #### Getting Glide
@@ -119,7 +120,8 @@ For more information on Glide's update feature check out the [Glide documentatio
 
 ### IDE Specific Settings
 #### IntelliJ Idea
-All explanations up until this point has been done with terminal in mind. It is possible to set up this project in Intellij as well (if it does not work out of the box).
+All explanations up until this point has been done with terminal in mind. It is possible to set up this project in IntelliJ as well. 
+Follow the steps outlined by the [go-lang-idea-plugin](https://github.com/go-lang-plugin-org/go-lang-idea-plugin/wiki/Documentation#setting-up-the-go-sdk).
 
 ## Using Project
 After cloning this repository, you'll need to make sure that:
