@@ -23,17 +23,29 @@ $ go get github.com/labstack/echo
 ```
 This in turn downloads the source code into `$GOPATH/src/github.com/labstack/echo` which enables you to use it as an import `github.com/labstack/echo`
 
+To make code sharable between co-workers or setting up a scalable, automated environment outside of you local machine, you'll have to make use of `vendoring` in Go. This allows your applications to fetch dependencies not only from `$GOPATH/src` but makes a `vendor` folder available inside each project - which allows you to have dependencies inside and specific to the project itself, not just your global workspace.
+ 
+Glide allows you to manage your dependencies in your vendor folder on a project level by having specific versions of your dependencies defined inside of a `glide.yaml` file:
+```
+package: go-deps-with-glide
+import:
+- package: github.com/labstack/echo
+  version: ^3.2.1
+```
+
+There is also a `glide.lock` file which ensures that a project is always using the same version for each dependency specified whenever you execute `glide install` on that project.
+
 ## Setting Up
 
 ### Get Go-ing
-To use this sample, you will need [Go](https://golang.org) installed on your computer. **The steps documented in this project works with version 1.6.0 and up of Go.**
+To use this sample, you will need [Go](https://golang.org) installed on your computer. **The steps documented in this project works with version 1.5.0 and up of Go.**
 Follow the instructions from the [official page](https://golang.org/doc/install). 
 
 After you've completed the installation and ran a quick test, check your go version from command line:
 ```
 $ go version
 ```
-You'll see something like this printed out - remember to use go1.6.0 or higher:
+You'll see something like this printed out:
 ```
 go version go1.8.3 darwin/amd64
 ```
