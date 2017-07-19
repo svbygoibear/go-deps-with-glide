@@ -121,6 +121,8 @@ For more information on Glide's update feature check out the [Glide documentatio
 ### IDE Specific Settings
 #### IntelliJ Idea
 All explanations up until this point has been done with terminal in mind. It is possible to set up this project in IntelliJ as well. 
+First thing is to download and install the go-lang-idea-plugin:
+![screenshot](https://raw.githubusercontent.com/svbygoibear/go-deps-with-glide/master/img/go-lang-plugin.png)
 Follow the steps outlined by the [go-lang-idea-plugin](https://github.com/go-lang-plugin-org/go-lang-idea-plugin/wiki/Documentation#setting-up-the-go-sdk).
 
 ## Using Project
