@@ -36,6 +36,17 @@ import:
 There is also a `glide.lock` file which ensures that a project is always using the same version for each dependency specified whenever you execute `glide install` on that project.
 The big advantage of this is that it allows you to commit your project **without** the vendor folder and its contents as the specific versions can be found again using Glide to install the dependencies as specified in the `glide.yaml` and `glide.lock` files.
 
+## Pros and Cons
+### Pros
+- Lets you define dependencies per project.
+- Looks at dependencies from a repository level instead of a package level, reducing complexity.
+- Allows you to keep track of dependencies via the `glide.lock` file and lets you specify dependencies via the `glide.yaml` file.
+
+### Cons
+- Does not make use of anything set in `$GOPATH` - only dependencies in your `vendor` folder.
+- When using `glide update github.com/labstack/echo` you can't specify which version number.
+- To specify version specific updates, you need there to be a release specific tag `glide update https://github.com/labstack/echo/releases/tag/v3.2.1` which not all projects have.
+
 ## Setting Up
 
 ### Get Go-ing
@@ -97,6 +108,19 @@ For this project, you'll have to install all the dependencies that's been listed
 $HOME/go/src/go-deps-with-glide glide install 
 ```
 You'll notice that this creates a `vendor` folder inside of your project which contains all the dependencies that you'll be using.
+```
+$HOME
+    |_ go
+        |_ bin
+        |_ pkg
+        |_ src
+            |_ go-deps-with-glide
+                |_ glide.lock
+                |_ glide.yaml
+                |_ main.go
+                |_ vendor
+                    |_
+```
 
 If you get a `[ERROR]	$GOPATH is not set.` message, it could be that you need to set your go path in your terminal session before installing:
 ```
