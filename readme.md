@@ -41,10 +41,11 @@ The big advantage of this is that it allows you to commit your project **without
 - Lets you define dependencies per project.
 - Looks at dependencies from a repository level instead of a package level, reducing complexity.
 - Allows you to keep track of dependencies via the `glide.lock` file and lets you specify dependencies via the `glide.yaml` file.
+- The dependency tree is handled recursively.
 
 ### Cons
 - Does not make use of anything set in `$GOPATH` - only dependencies in your `vendor` folder.
-- When using `glide update github.com/labstack/echo` you can't specify which version number.
+- When using `glide update github.com/labstack/echo` you can't specify which version number. See [this](https://github.com/Masterminds/glide/issues/252) issue.
 - To specify version specific updates, you need there to be a release specific tag `glide update https://github.com/labstack/echo/releases/tag/v3.2.1` which not all projects have.
 
 ## Setting Up
@@ -174,3 +175,4 @@ $HOME/go/src/go-deps-with-glide go run main.go
 - [Glide Caching](https://github.com/Masterminds/glide/issues/178)
 - [Vendoring in Go](https://goenning.net/2017/02/23/packages-vendoring-in-go/)
 - [Glide yaml](https://github.com/Masterminds/glide#glideyaml)
+- [Using Glide](https://www.meta.sc/tech/govendoring/)
